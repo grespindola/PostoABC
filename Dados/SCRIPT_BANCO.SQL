@@ -18,6 +18,8 @@ USER 'SYSDBA' PASSWORD 'masterkey'
 PAGE_SIZE 16384
 DEFAULT CHARACTER SET NONE COLLATION NONE;*/
 
+
+
 /******************************************************************************/
 /****                               Domains                                ****/
 /******************************************************************************/
@@ -28,12 +30,14 @@ VARCHAR(100);
 CREATE DOMAIN VALOR_GERAL AS
 NUMERIC(15,3);
 
+
+
 /******************************************************************************/
 /****                              Generators                              ****/
 /******************************************************************************/
 
-CREATE GENERATOR GEN_ABASTECIMENTO_ID START WITH 0 INCREMENT BY 1;
-SET GENERATOR GEN_ABASTECIMENTO_ID TO 0;
+CREATE GENERATOR GEN_ABASTECIMENTO_ID START WITH 3 INCREMENT BY 1;
+SET GENERATOR GEN_ABASTECIMENTO_ID TO 16;
 
 CREATE GENERATOR GEN_BOMBA_ID START WITH 0 INCREMENT BY 1;
 SET GENERATOR GEN_BOMBA_ID TO 4;
@@ -45,7 +49,6 @@ CREATE GENERATOR GEN_TANQUE_ID START WITH 0 INCREMENT BY 1;
 SET GENERATOR GEN_TANQUE_ID TO 2;
 
 
-
 /******************************************************************************/
 /****                                Tables                                ****/
 /******************************************************************************/
@@ -54,36 +57,34 @@ SET GENERATOR GEN_TANQUE_ID TO 2;
 
 CREATE TABLE ABASTECIMENTO (
     CODIGO        INTEGER NOT NULL,
-    DATA          DATE,
-    HORA          TIME,
-    CODIGO_BOMBA  INTEGER,
-    LITROS        VALOR_GERAL,
-    VALOR         VALOR_GERAL,
+    DATA          DATE NOT NULL,
+    HORA          TIME NOT NULL,
+    CODIGO_BOMBA  INTEGER NOT NULL,
+    LITROS        VALOR_GERAL NOT NULL,
+    VALOR         VALOR_GERAL NOT NULL,
     IMPOSTO       VALOR_GERAL
 );
 
 
 CREATE TABLE BOMBA (
     CODIGO         INTEGER NOT NULL,
-    NOME           NOME_GERAL,
-    CODIGO_TANQUE  INTEGER
+    NOME           NOME_GERAL NOT NULL,
+    CODIGO_TANQUE  INTEGER NOT NULL
 );
 
 
 CREATE TABLE COMBUSTIVEL (
     CODIGO       INTEGER NOT NULL,
-    NOME         NOME_GERAL,
-    PRECO_LITRO  VALOR_GERAL
+    NOME         NOME_GERAL NOT NULL,
+    PRECO_LITRO  VALOR_GERAL NOT NULL
 );
 
 
 CREATE TABLE TANQUE (
     CODIGO              INTEGER NOT NULL,
-    NOME                NOME_GERAL,
-    CODIGO_COMBUSTIVEL  INTEGER
+    NOME                NOME_GERAL NOT NULL,
+    CODIGO_COMBUSTIVEL  INTEGER NOT NULL
 );
-
-
 
 
 /******************************************************************************/
@@ -170,7 +171,6 @@ SET TERM ; ^
 /****                         DADOS BASE                                   ****/
 /******************************************************************************/
 
-
 INSERT INTO COMBUSTIVEL (CODIGO, NOME, PRECO_LITRO)
                  VALUES (1, 'GASOLINA', 5.569);
 INSERT INTO COMBUSTIVEL (CODIGO, NOME, PRECO_LITRO)
@@ -197,5 +197,32 @@ INSERT INTO BOMBA (CODIGO, NOME, CODIGO_TANQUE)
            VALUES (3, 'BOMBA C', 2);
 INSERT INTO BOMBA (CODIGO, NOME, CODIGO_TANQUE)
            VALUES (4, 'BOMBA D', 2);
+
+COMMIT WORK;
+
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (1, '2024-06-13', '08:49:45', 1, 1.26, 6.172, 0.802);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (2, '2024-06-14', '08:51:33', 3, 1.233, 6.04, 0.785);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (3, '2024-06-14', '00:05:23', 2, 100, 489.9, 63.687);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (4, '2024-06-14', '10:19:44', 2, 123, 602.577, 78.335);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (5, '2024-06-15', '10:20:40', 4, 2.325, 13.622, 1.77);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (9, '2024-06-15', '10:42:05', 2, 1, 4.899, 0.636);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (10, '2024-06-15', '12:30:46', 2, 1, 4.889, 0.635);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (13, '2024-06-15', '13:24:06', 3, 300, 1757.7, 228.501);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (14, '2024-06-13', '13:25:50', 4, 100, 585.9, 76.167);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (12, '2024-06-15', '12:11:33', 2, 120.65, 589.857, 76.681);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (15, '2024-06-14', '13:27:44', 3, 1, 5.859, 0.761);
+INSERT INTO ABASTECIMENTO (CODIGO, DATA, HORA, CODIGO_BOMBA, LITROS, VALOR, IMPOSTO)
+                   VALUES (16, '2024-06-15', '16:12:35', 1, 5.137, 25.114, 3.264);
 
 COMMIT WORK;

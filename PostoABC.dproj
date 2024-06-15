@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>PostoABC.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -100,6 +100,10 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>cadastro.ico</Icon_MainIcon>
         <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+        <VerInfo_Build>1</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Gustavo Espindola;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.1;InternalName=Gustavo Espindola;LegalCopyright=Gustavo Espindola;LegalTrademarks=Gustavo Espindola;OriginalFilename=Gustavo Espindola;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.1;Comments=</VerInfo_Keys>
+        <DCC_DcpOutput>dcu</DCC_DcpOutput>
+        <DCC_ExeOutput>bin</DCC_ExeOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

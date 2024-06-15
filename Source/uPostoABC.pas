@@ -14,7 +14,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, IPPeerClient,
-  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope;
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -29,6 +30,7 @@ type
     Relatrios1: TMenuItem;
     AbastecimentoDirio1: TMenuItem;
     Sair1: TMenuItem;
+    Image1: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Lanamento1Click(Sender: TObject);
     procedure Combustvel1Click(Sender: TObject);
