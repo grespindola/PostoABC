@@ -116,11 +116,6 @@
         <DCCReference Include="source\utils\uMensagem.pas">
             <Form>frmMensagem</Form>
         </DCCReference>
-        <DCCReference Include="source\utils\uPergunta.pas">
-            <Form>frmPergunta</Form>
-        </DCCReference>
-        <DCCReference Include="DAO\GenericDAO.pas"/>
-        <DCCReference Include="DAO\AbastecimentoDAO.pas"/>
         <DCCReference Include="Source\uCadastro.pas">
             <Form>frmCadastro</Form>
             <FormType>dfm</FormType>
@@ -130,12 +125,24 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Source\utils\uFuncoes.pas"/>
-        <DCCReference Include="Source\uPesquisa.pas">
-            <Form>frmPesquisa</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="Source\utils\uConstants.pas"/>
         <DCCReference Include="Source\utils\uGlobais.pas"/>
+        <DCCReference Include="Source\utils\uPergunta.pas">
+            <Form>frmPergunta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Source\uCombustivel.pas">
+            <Form>frmCombustivel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Source\uTanque.pas">
+            <Form>frmTanque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Source\uBomba.pas">
+            <Form>frmBomba</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -162,7 +169,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="..\bin\PostoABC.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="bin\PostoABC.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>PostoABC.exe</RemoteName>
                         <Overwrite>true</Overwrite>

@@ -1,3 +1,9 @@
+
+{------------------------------------------------------------------------------}
+{ # PostoABC - Constantes  Globais                                             }
+{ Gustavo Espíndola - 14/06/2024                                               }
+{------------------------------------------------------------------------------}
+
 unit uConstants;
 
 interface
@@ -11,7 +17,8 @@ const
 
     {CORES}
     cCadFooter = 90;
-    cCorReadOnly = $00D7D7D7;
+    //cCorReadOnly = $00D7D7D7;
+    cCorReadOnly = $00E9DACD;
     cCorAtivo = clWhite;
     cFundoPrincipal = $00C7A383;
     cFundoMenu = $00C7A383;

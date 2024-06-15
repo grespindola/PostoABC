@@ -1,3 +1,9 @@
+
+{------------------------------------------------------------------------------}
+{ # PostoABC - Biblioteca de Funcões Úteis                                     }
+{ Gustavo Espíndola - 14/06/2024                                               }
+{------------------------------------------------------------------------------}
+
 unit uFuncoes;
 
 interface
@@ -11,11 +17,9 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Phys.FB,
-  FireDAC.Phys.FBDef,
-  Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Dialogs,
-  GenericDAO, Vcl.ExtCtrls, System.ImageList,
-  Vcl.ImgList, cxImageList, cxGraphics, Vcl.Mask, Vcl.DBCtrls;
+  FireDAC.Phys.FBDef, Winapi.Messages, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Dialogs, Vcl.ExtCtrls, System.ImageList,
+  Vcl.ImgList, Vcl.Mask, Vcl.DBCtrls;
 
   function leConfigs():Boolean;
   function Consulta(pSQL:String):TFDQuery;
@@ -27,9 +31,6 @@ uses
   procedure ShowAlerta(pMensagem : String; pMaisInfo : String = '');
   procedure ShowErro(pMensagem : String);
   function ShowPergunta(pMensagem, pTitulo : String; pTimer: Integer = 0): TModalResult;
-
-  function Pesquisar(pForm : TForm; pTabela:String; pNomes : String; pCampos: String; pTamanhos: String;
-                   pTitulo : string = ''; pEdit : TEdit = Nil): Variant;
 
   procedure formataComponentes(pForm : TForm; pModoEdit : Boolean);
   function Trunca(vValor : Double; vDecimais : Single) : Double;
@@ -46,7 +47,7 @@ uses
 
 implementation
 
-uses uGlobais, uConstants, uDMPrincipal, uPesquisa, uMensagem, uPergunta;
+uses uGlobais, uConstants, uDMPrincipal, uMensagem, uPergunta;
 
 
 function GetDefaultPrinterName: string;
@@ -165,24 +166,6 @@ begin
   if (Key = ',') and
      (Pos(Key, TEdit(Sender).Text) > 0) then
     Key := #0;
-end;
-
-function Pesquisar(pForm : TForm; pTabela:String; pNomes : String; pCampos: String; pTamanhos: String;
-                   pTitulo : string = ''; pEdit : TEdit = Nil):Variant;
-begin
-  Result := 0;
-
-  frmPesquisa := TFrmPesquisa.Create(pForm, pTabela, pNomes, pCampos, pTamanhos, pTitulo, Result);
-  try
-    frmPesquisa.ShowModal;
-    if Assigned(pEdit) then
-    begin
-      if String(Result) <> '0' then
-        pEdit.Text := Result;
-    end;
-  finally
-    FreeAndNil(frmPesquisa);
-  end;
 end;
 
 function checaEdit(pComponente:TWinControl):Boolean;

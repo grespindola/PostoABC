@@ -1,3 +1,14 @@
+
+{------------------------------------------------------------------------------}
+{ # PostoABC - Projeto                                                         }
+{   - Programa CRUD para teste da FORTES Tecnologia                            }
+{    - CRUD Genérico.: uCadastro.pas                                           }
+{    - Controle......: diretório Source                                        }
+{    - View..........: diretório Source                                        }
+{ Gustavo Espíndola - 14/06/2024                                               }
+{------------------------------------------------------------------------------}
+
+
 program PostoABC;
 
 uses
@@ -5,15 +16,15 @@ uses
   uPostoABC in 'source\uPostoABC.pas' {frmPrincipal},
   uDmPrincipal in 'Source\uDmPrincipal.pas' {dmPrincipal: TDataModule},
   uMensagem in 'source\utils\uMensagem.pas' {frmMensagem},
-  uPergunta in 'source\utils\uPergunta.pas' {frmPergunta},
-  GenericDAO in 'DAO\GenericDAO.pas',
-  AbastecimentoDAO in 'DAO\AbastecimentoDAO.pas',
   uCadastro in 'Source\uCadastro.pas' {frmCadastro},
   uAbastecimento in 'Source\uAbastecimento.pas' {frmAbastecimento},
   uFuncoes in 'Source\utils\uFuncoes.pas',
-  uPesquisa in 'Source\uPesquisa.pas' {frmPesquisa},
   uConstants in 'Source\utils\uConstants.pas',
-  uGlobais in 'Source\utils\uGlobais.pas';
+  uGlobais in 'Source\utils\uGlobais.pas',
+  uPergunta in 'Source\utils\uPergunta.pas' {frmPergunta},
+  uCombustivel in 'Source\uCombustivel.pas' {frmCombustivel},
+  uTanque in 'Source\uTanque.pas' {frmTanque},
+  uBomba in 'Source\uBomba.pas' {frmBomba};
 
 {$R *.res}
 

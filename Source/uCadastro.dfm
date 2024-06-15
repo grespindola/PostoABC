@@ -14,12 +14,10 @@ object frmCadastro: TfrmCadastro
   Font.Height = -13
   Font.Name = 'Segoe UI'
   Font.Style = []
-  FormStyle = fsMDIChild
   KeyPreview = True
   OldCreateOrder = False
   ParentBiDiMode = False
   Position = poDefault
-  Visible = True
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
@@ -31,7 +29,7 @@ object frmCadastro: TfrmCadastro
     Left = 0
     Top = 0
     Width = 797
-    Height = 55
+    Height = 35
     Align = alTop
     BevelOuter = bvNone
     BiDiMode = bdLeftToRight
@@ -41,10 +39,10 @@ object frmCadastro: TfrmCadastro
     TabOrder = 0
     object lblCodigo: TLabel
       Left = 10
-      Top = 6
-      Width = 45
+      Top = 8
+      Width = 49
       Height = 16
-      Caption = 'C'#243'digo'
+      Caption = 'C'#243'digo:'
       Color = clWindowText
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -56,8 +54,8 @@ object frmCadastro: TfrmCadastro
     end
     object edtCodigo: TEdit
       Tag = 2000
-      Left = 10
-      Top = 24
+      Left = 63
+      Top = 4
       Width = 71
       Height = 25
       Font.Charset = DEFAULT_CHARSET
@@ -71,9 +69,9 @@ object frmCadastro: TfrmCadastro
   end
   object pnCadastro: TPanel
     Left = 0
-    Top = 55
+    Top = 35
     Width = 797
-    Height = 349
+    Height = 369
     Align = alClient
     BevelOuter = bvNone
     BiDiMode = bdLeftToRight
@@ -81,6 +79,8 @@ object frmCadastro: TfrmCadastro
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 55
+    ExplicitHeight = 349
   end
   object pnFooter: TPanel
     Left = 0

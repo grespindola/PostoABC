@@ -40,14 +40,17 @@ object frmPrincipal: TfrmPrincipal
     Top = 8
     object Cadastros1: TMenuItem
       Caption = '&Cadastros'
+      object Combustvel1: TMenuItem
+        Caption = '&Combust'#237'vel'
+        OnClick = Combustvel1Click
+      end
       object Pessoas1: TMenuItem
         Caption = '&Tanques'
+        OnClick = Pessoas1Click
       end
       object PessoasemLote1: TMenuItem
         Caption = '&Bombas'
-      end
-      object Combustvel1: TMenuItem
-        Caption = '&Combust'#237'vel'
+        OnClick = PessoasemLote1Click
       end
     end
     object Abastecimento1: TMenuItem

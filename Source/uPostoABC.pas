@@ -1,10 +1,8 @@
 
 {------------------------------------------------------------------------------}
-{ - PostoABC - Menu Principal                                                  }
+{ # PostoABC - Menu Principal                                                  }
 {   - Programa CRUD para teste da FORTES Tecnologia                            }
-{    - Persistência.: diretório DAO                                            }
-{    - Controle.....: diretório Source                                         }
-{    - View.........: diretório Source                                         }
+{    - CRUD Genérico.: uCadastro.pas                                           }
 { Gustavo Espíndola - 14/06/2024                                               }
 {------------------------------------------------------------------------------}
 
@@ -32,6 +30,9 @@ type
     AbastecimentoDirio1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Lanamento1Click(Sender: TObject);
+    procedure Combustvel1Click(Sender: TObject);
+    procedure Pessoas1Click(Sender: TObject);
+    procedure PessoasemLote1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -46,10 +47,16 @@ var
 implementation
 
 uses
-   uConstants, uGlobais, uFuncoes, ShellAPI, uDmPrincipal, uAbastecimento;
+   uConstants, uGlobais, uFuncoes, ShellAPI, uDmPrincipal, uAbastecimento, uCombustivel, uTanque, uBomba;
 
 {$R *.dfm}
 
+
+procedure TfrmPrincipal.Combustvel1Click(Sender: TObject);
+begin
+   frmCombustivel := TfrmCombustivel.Create(Self);
+   frmCombustivel.ShowModal;
+end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
@@ -86,12 +93,23 @@ begin
    Self.Color := cFundoCadastro;
 end;
 
-
 procedure TfrmPrincipal.Lanamento1Click(Sender: TObject);
 begin
-   if not Assigned(frmAbastecimento) then
-      frmAbastecimento := TfrmAbastecimento.Create(Self);
-   frmAbastecimento.Show;
+   frmAbastecimento := TfrmAbastecimento.Create(Self);
+   frmAbastecimento.ShowModal;
+end;
+
+
+procedure TfrmPrincipal.Pessoas1Click(Sender: TObject);
+begin
+   frmTanque := TfrmTanque.Create(Self);
+   frmTanque.ShowModal;
+end;
+
+procedure TfrmPrincipal.PessoasemLote1Click(Sender: TObject);
+begin
+   frmBomba := TfrmBomba.Create(Self);
+   frmBomba.ShowModal;
 end;
 
 end.
