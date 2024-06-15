@@ -1,3 +1,9 @@
+
+{------------------------------------------------------------------------------}
+{ # PostoABC - Formulário de Filtro para Relatórios                            }
+{ Gustavo Espíndola - 15/06/2024                                               }
+{------------------------------------------------------------------------------}
+
 unit uFiltro;
 
 interface
@@ -98,6 +104,8 @@ function TfrmFiltro.criaCaptionFiltro : String;
 var
    sCaption : String;
 begin
+   { Cria Caption de Filtros de acordo com filtros informados }
+
    //TIPO DE COMBUSTÍVEL
    if cbCombustivel.ItemIndex >= 0 then
    begin
@@ -128,6 +136,8 @@ function TfrmFiltro.criaFiltro : String;
 var
    sFiltro : String;
 begin
+   { Cria cláusula Where de acordo com filtros informados }
+
    if edInicio.Date > edFinal.Date then
    begin
       ShowInfo('Data inicial não pode ser maior que a Data Final.');
@@ -181,6 +191,8 @@ end;
 
 procedure TfrmFiltro.alimentaCombos;
 begin
+   { Cria cláusula Where de acordo com filtros informados }
+
    qCombustivel.Open;
    qCombustivel.First;
    cbCombustivel.Items.Clear;

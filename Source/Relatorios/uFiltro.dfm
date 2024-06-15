@@ -43,7 +43,6 @@ object frmFiltro: TfrmFiltro
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 886
     object btnInserir: TButton
       Left = 57
       Top = 10
@@ -113,7 +112,6 @@ object frmFiltro: TfrmFiltro
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 513
     object Label1: TLabel
       Left = 10
       Top = 11
@@ -414,7 +412,6 @@ object frmFiltro: TfrmFiltro
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 886
     object lblCodigo: TLabel
       Left = 10
       Top = 9
