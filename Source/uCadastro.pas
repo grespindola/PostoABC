@@ -281,6 +281,8 @@ begin
 
       Tag := 1;
       HabilitaComponentes;
+
+      edtCodigo.Text := '';
    end;
 end;
 

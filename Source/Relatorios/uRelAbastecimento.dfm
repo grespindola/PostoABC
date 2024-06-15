@@ -11,6 +11,7 @@ object RelAbastecimentos: TRelAbastecimentos
   Font.Name = 'Arial'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 14
   object Relatorio: TRLReport
@@ -28,18 +29,19 @@ object RelAbastecimentos: TRelAbastecimentos
       Left = 38
       Top = 38
       Width = 718
-      Height = 71
+      Height = 81
+      AutoExpand = False
       BandType = btTitle
       object RLLabel10: TRLLabel
         Left = 0
-        Top = 34
+        Top = 44
         Width = 718
         Height = 37
         AutoSize = False
         Borders.Sides = sdCustom
-        Borders.DrawLeft = True
+        Borders.DrawLeft = False
         Borders.DrawTop = True
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = False
         Caption = ' '
         Color = clSilver
@@ -48,7 +50,7 @@ object RelAbastecimentos: TRelAbastecimentos
       end
       object RLLabel1: TRLLabel
         Left = 200
-        Top = 42
+        Top = 52
         Width = 325
         Height = 22
         Caption = 'Relat'#243'rios de Abastecimentos - Di'#225'rio'
@@ -63,11 +65,11 @@ object RelAbastecimentos: TRelAbastecimentos
         Transparent = False
       end
       object RLSystemInfo1: TRLSystemInfo
-        Left = 0
-        Top = 12
+        Left = 676
+        Top = 27
         Width = 39
         Height = 16
-        Alignment = taJustify
+        Alignment = taRightJustify
         Color = clWhite
         ParentColor = False
         Text = ''
@@ -75,7 +77,7 @@ object RelAbastecimentos: TRelAbastecimentos
       end
       object RLSystemInfo2: TRLSystemInfo
         Left = 637
-        Top = 12
+        Top = 11
         Width = 48
         Height = 16
         Alignment = taRightJustify
@@ -88,7 +90,7 @@ object RelAbastecimentos: TRelAbastecimentos
       end
       object RLSystemInfo3: TRLSystemInfo
         Left = 686
-        Top = 12
+        Top = 11
         Width = 29
         Height = 16
         Alignment = taRightJustify
@@ -99,10 +101,18 @@ object RelAbastecimentos: TRelAbastecimentos
         Text = 'de '
         Transparent = False
       end
+      object filtro: TRLMemo
+        Left = 0
+        Top = 11
+        Width = 631
+        Height = 31
+        Behavior = [beSiteExpander]
+        Layout = tlBottom
+      end
     end
     object RLBand2: TRLBand
       Left = 38
-      Top = 109
+      Top = 119
       Width = 718
       Height = 24
       BandType = btColumnHeader
@@ -131,7 +141,7 @@ object RelAbastecimentos: TRelAbastecimentos
         Align = faHeight
         AutoSize = False
         Borders.Sides = sdCustom
-        Borders.DrawLeft = True
+        Borders.DrawLeft = False
         Borders.DrawTop = True
         Borders.DrawRight = True
         Borders.DrawBottom = True
@@ -206,7 +216,7 @@ object RelAbastecimentos: TRelAbastecimentos
         Borders.Sides = sdCustom
         Borders.DrawLeft = True
         Borders.DrawTop = True
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = True
         Caption = 'Valor'
         Color = 15000804
@@ -223,7 +233,7 @@ object RelAbastecimentos: TRelAbastecimentos
     end
     object RLBand3: TRLBand
       Left = 38
-      Top = 133
+      Top = 143
       Width = 718
       Height = 27
       GroupIndex = 1
@@ -234,28 +244,11 @@ object RelAbastecimentos: TRelAbastecimentos
         Height = 27
         Align = faClient
         Borders.Sides = sdCustom
-        Borders.DrawLeft = True
+        Borders.DrawLeft = False
         Borders.DrawTop = False
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = True
         Caption = ' '
-      end
-      object RLDBText1: TRLDBText
-        Left = 0
-        Top = 0
-        Width = 80
-        Height = 27
-        Align = faHeight
-        AutoSize = False
-        Borders.Sides = sdCustom
-        Borders.DrawLeft = True
-        Borders.DrawTop = False
-        Borders.DrawRight = True
-        Borders.DrawBottom = True
-        DataField = 'DATA'
-        DataSource = dsRel
-        Layout = tlCenter
-        Text = ''
       end
       object RLDBText2: TRLDBText
         Left = 79
@@ -302,7 +295,7 @@ object RelAbastecimentos: TRelAbastecimentos
         Borders.Sides = sdCustom
         Borders.DrawLeft = True
         Borders.DrawTop = False
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = True
         DataField = 'VALOR_DIA'
         DataSource = dsRel
@@ -310,10 +303,27 @@ object RelAbastecimentos: TRelAbastecimentos
         Layout = tlCenter
         Text = ''
       end
+      object RLDBText1: TRLDBText
+        Left = 0
+        Top = 0
+        Width = 80
+        Height = 27
+        Align = faHeight
+        AutoSize = False
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = True
+        Borders.DrawBottom = True
+        DataField = 'DATA'
+        DataSource = dsRel
+        Layout = tlCenter
+        Text = ''
+      end
     end
     object RLBand4: TRLBand
       Left = 38
-      Top = 160
+      Top = 170
       Width = 718
       Height = 28
       BandType = btColumnFooter
@@ -325,9 +335,9 @@ object RelAbastecimentos: TRelAbastecimentos
         Height = 28
         Align = faClient
         Borders.Sides = sdCustom
-        Borders.DrawLeft = True
+        Borders.DrawLeft = False
         Borders.DrawTop = False
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = True
         Caption = ' '
         Color = 15000804
@@ -353,15 +363,15 @@ object RelAbastecimentos: TRelAbastecimentos
         Transparent = False
       end
       object RLDBResult1: TRLDBResult
-        Left = 608
+        Left = 603
         Top = 6
-        Width = 110
+        Width = 115
         Height = 16
         Alignment = taRightJustify
         Borders.Sides = sdCustom
         Borders.DrawLeft = False
         Borders.DrawTop = False
-        Borders.DrawRight = True
+        Borders.DrawRight = False
         Borders.DrawBottom = False
         Color = 15000804
         DataField = 'VALOR_DIA'
@@ -390,6 +400,7 @@ object RelAbastecimentos: TRelAbastecimentos
       'LEFT JOIN BOMBA B ON A.CODIGO_BOMBA = B.CODIGO'
       'LEFT JOIN TANQUE T ON B.CODIGO_TANQUE = T.CODIGO'
       'LEFT JOIN COMBUSTIVEL C ON T.CODIGO_COMBUSTIVEL = C.CODIGO'
+      '/* WHERE */'
       'GROUP BY 1, 2, 3'
       'ORDER BY 1, 2, 3')
     Left = 824

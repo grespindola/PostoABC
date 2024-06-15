@@ -147,6 +147,10 @@
             <Form>RelAbastecimentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Source\Relatorios\uFiltro.pas">
+            <Form>frmFiltro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

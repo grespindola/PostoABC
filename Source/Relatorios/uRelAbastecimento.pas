@@ -40,10 +40,13 @@ type
     RLDBResult1: TRLDBResult;
     RLLabel9: TRLLabel;
     RLLabel10: TRLLabel;
+    filtro: TRLMemo;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure Filtrar(sWhere : String; sCaption : String);
   end;
 
 var
@@ -55,5 +58,23 @@ uses
    uDmPrincipal;
 
 {$R *.dfm}
+
+{ TRelAbastecimentos }
+
+procedure TRelAbastecimentos.Filtrar(sWhere: String; sCaption : String);
+begin
+   //Realiza filtro de acordo com argumento passado
+   qRel.Close;
+   qRel.SQL.Text := qRel.SQL.Text.Replace('/* WHERE */',' '+ sWhere +' ');
+   qRel.Open;
+
+   filtro.Lines.Text := sCaption;
+end;
+
+procedure TRelAbastecimentos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+   Action := caFree;
+end;
 
 end.

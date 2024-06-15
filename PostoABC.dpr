@@ -25,7 +25,8 @@ uses
   uCombustivel in 'Source\uCombustivel.pas' {frmCombustivel},
   uTanque in 'Source\uTanque.pas' {frmTanque},
   uBomba in 'Source\uBomba.pas' {frmBomba},
-  uRelAbastecimento in 'Source\Relatorios\uRelAbastecimento.pas' {RelAbastecimentos};
+  uRelAbastecimento in 'Source\Relatorios\uRelAbastecimento.pas' {RelAbastecimentos},
+  uFiltro in 'Source\Relatorios\uFiltro.pas' {frmFiltro};
 
 {$R *.res}
 

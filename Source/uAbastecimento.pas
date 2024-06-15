@@ -16,7 +16,7 @@ uses
    Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.ComCtrls, FireDAC.Stan.Option,
    FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
    FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-   uDMPrincipal, Math, Vcl.Buttons;
+   uDMPrincipal, Math, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
 
 type
    TfrmAbastecimento = class(TfrmCadastro)
@@ -52,14 +52,20 @@ type
       qAbastecimentoVALOR: TBCDField;
       qAbastecimentoIMPOSTO: TBCDField;
       btnPreco: TBitBtn;
+    grid: TDBGrid;
+    qAbastecimentoNOME: TStringField;
       procedure btnInserirClick(Sender: TObject);
       procedure btnGravarClick(Sender: TObject);
       procedure edLitragemKeyPress(Sender: TObject; var Key: Char);
       procedure edLitragemChange(Sender: TObject);
       procedure qAbastecimentoAfterScroll(DataSet: TDataSet);
       procedure btnPrecoClick(Sender: TObject);
+    procedure btnAlterarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
    private
       procedure KeyPressNumerico(Sender: TObject; var Key: Char);
+    procedure controlaGrid(bHabilita: Boolean);
     { Private declarations }
    public
     { Public declarations }
@@ -144,6 +150,24 @@ begin
    qBombas.Refresh;
 end;
 
+procedure TfrmAbastecimento.btnAlterarClick(Sender: TObject);
+begin
+   inherited;
+   controlaGrid(False);
+end;
+
+procedure TfrmAbastecimento.btnCancelarClick(Sender: TObject);
+begin
+   inherited;
+   controlaGrid(True);
+end;
+
+procedure TfrmAbastecimento.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+  controlaGrid(True);
+end;
+
 procedure TfrmAbastecimento.btnGravarClick(Sender: TObject);
 begin
    { Gravando abastecimento }
@@ -181,6 +205,18 @@ begin
 
    //Gravação na herança
    inherited;
+
+   controlaGrid(True);
+end;
+
+procedure TfrmAbastecimento.controlaGrid(bHabilita:Boolean);
+begin
+   grid.Enabled := bHabilita;
+   if grid.Enabled then
+      grid.Color := clWhite
+   else
+      grid.Color := clBtnFace;
+   grid.Repaint;
 end;
 
 procedure TfrmAbastecimento.btnInserirClick(Sender: TObject);
@@ -202,6 +238,8 @@ begin
       cbBomba.SetFocus;
       cbBomba.DropDown;
    end;
+
+   controlaGrid(False);
 end;
 
 procedure TfrmAbastecimento.KeyPressNumerico(Sender: TObject; var Key: Char);

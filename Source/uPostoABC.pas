@@ -28,12 +28,14 @@ type
     Lanamento1: TMenuItem;
     Relatrios1: TMenuItem;
     AbastecimentoDirio1: TMenuItem;
+    Sair1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Lanamento1Click(Sender: TObject);
     procedure Combustvel1Click(Sender: TObject);
     procedure Pessoas1Click(Sender: TObject);
     procedure PessoasemLote1Click(Sender: TObject);
     procedure AbastecimentoDirio1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -48,7 +50,7 @@ var
 implementation
 
 uses
-   uConstants, uGlobais, uFuncoes, ShellAPI, uDmPrincipal, uAbastecimento, uCombustivel, uTanque, uBomba, uRelAbastecimento;
+   uConstants, uGlobais, uFuncoes, ShellAPI, uDmPrincipal, uAbastecimento, uCombustivel, uTanque, uBomba, uRelAbastecimento, uFiltro;
 
 {$R *.dfm}
 
@@ -119,15 +121,18 @@ begin
    end;
 end;
 
+procedure TfrmPrincipal.Sair1Click(Sender: TObject);
+begin
+   Close;
+end;
+
 procedure TfrmPrincipal.AbastecimentoDirio1Click(Sender: TObject);
 begin
-   //Chamando relatório de Abastecimentos Diário
-   RelAbastecimentos := TRelAbastecimentos.Create(Self);
+   frmFiltro := TfrmFiltro.Create(Self);
    try
-      RelAbastecimentos.qRel.Open;
-      RelAbastecimentos.Relatorio.Preview;
+      frmFiltro.ShowModal;
    finally
-      FreeAndNil(RelAbastecimentos);
+      FreeAndNil(frmFiltro);
    end;
 end;
 

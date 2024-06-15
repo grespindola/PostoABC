@@ -79,8 +79,6 @@ object frmCadastro: TfrmCadastro
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 55
-    ExplicitHeight = 349
   end
   object pnFooter: TPanel
     Left = 0

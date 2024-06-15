@@ -1,11 +1,11 @@
 inherited frmAbastecimento: TfrmAbastecimento
   Caption = 'Lan'#231'amento de Abastecimentos'
-  ClientHeight = 388
+  ClientHeight = 538
   ClientWidth = 783
   TransparentColorValue = clWhite
   Position = poMainFormCenter
   ExplicitWidth = 789
-  ExplicitHeight = 417
+  ExplicitHeight = 567
   PixelsPerInch = 96
   TextHeight = 17
   object Label6: TLabel [0]
@@ -33,8 +33,7 @@ inherited frmAbastecimento: TfrmAbastecimento
   end
   inherited pnCadastro: TPanel
     Width = 783
-    Height = 261
-    ExplicitTop = 35
+    Height = 411
     ExplicitWidth = 783
     ExplicitHeight = 261
     object Label2: TLabel
@@ -52,7 +51,7 @@ inherited frmAbastecimento: TfrmAbastecimento
     end
     object Label1: TLabel
       Left = 10
-      Top = 7
+      Top = 6
       Width = 188
       Height = 17
       Caption = 'Data e Hora do Abastecimento'
@@ -157,8 +156,8 @@ inherited frmAbastecimento: TfrmAbastecimento
       ShowHint = True
     end
     object Label10: TLabel
-      Left = 10
-      Top = 161
+      Left = 415
+      Top = 111
       Width = 85
       Height = 17
       Caption = 'Valor Imposto'
@@ -172,7 +171,7 @@ inherited frmAbastecimento: TfrmAbastecimento
     object edData: TDateTimePicker
       Tag = 1000
       Left = 10
-      Top = 25
+      Top = 24
       Width = 189
       Height = 25
       Date = 45457.896724861110000000
@@ -254,8 +253,8 @@ inherited frmAbastecimento: TfrmAbastecimento
     end
     object edValorImposto: TDBEdit
       Tag = 9999
-      Left = 10
-      Top = 179
+      Left = 415
+      Top = 129
       Width = 121
       Height = 25
       TabStop = False
@@ -349,9 +348,79 @@ inherited frmAbastecimento: TfrmAbastecimento
       TabStop = False
       OnClick = btnPrecoClick
     end
+    object grid: TDBGrid
+      Tag = 1000
+      Left = 10
+      Top = 164
+      Width = 761
+      Height = 237
+      TabStop = False
+      DataSource = DataSource
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ParentColor = True
+      ReadOnly = True
+      TabOrder = 8
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Alignment = taLeftJustify
+          Expanded = False
+          FieldName = 'CODIGO'
+          Title.Caption = 'Cod.'
+          Width = 60
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'DATA'
+          Title.Alignment = taCenter
+          Title.Caption = 'Data'
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'HORA'
+          Title.Alignment = taCenter
+          Title.Caption = 'Hora'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'NOME'
+          Title.Caption = 'Bomba'
+          Width = 210
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'LITROS'
+          Title.Caption = 'Litragem'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'VALOR'
+          Title.Caption = 'Valor'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'IMPOSTO'
+          Width = 100
+          Visible = True
+        end>
+    end
   end
   inherited pnFooter: TPanel
-    Top = 296
+    Top = 446
     Width = 783
     ExplicitTop = 296
     ExplicitWidth = 783
@@ -407,7 +476,9 @@ inherited frmAbastecimento: TfrmAbastecimento
     AfterScroll = qAbastecimentoAfterScroll
     Connection = dmPrincipal.FDConexao
     SQL.Strings = (
-      'SELECT * FROM ABASTECIMENTO'
+      'SELECT A.*, B.NOME'
+      'FROM ABASTECIMENTO A'
+      'LEFT JOIN BOMBA B ON B.CODIGO = A.CODIGO_BOMBA'
       'ORDER BY CODIGO')
     Left = 608
     Top = 8
@@ -451,6 +522,14 @@ inherited frmAbastecimento: TfrmAbastecimento
       EditFormat = '#,###0.000'
       Precision = 18
       Size = 3
+    end
+    object qAbastecimentoNOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 100
     end
   end
 end
