@@ -14,9 +14,9 @@
     <Transaction>2023/12/11 14:22:18.000.497,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\client\source\Unit1.pas</Transaction>
     <Transaction>2023/12/11 14:22:33.000.193,C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\client\source\uCadastroPessoaLote.pas=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\client\source\Unit1.pas</Transaction>
     <Transaction>2023/12/11 14:22:33.000.193,C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\client\source\uCadastroPessoaLote.dfm=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\client\source\Unit1.dfm</Transaction>
-    <Transaction>2023/12/11 15:02:48.000.315,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\Endereco.pas</Transaction>
-    <Transaction>2023/12/11 15:02:48.000.367,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\Pessoa.pas</Transaction>
     <Transaction>2023/12/11 15:02:48.000.341,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\EnderecoIntegracao.pas</Transaction>
+    <Transaction>2023/12/11 15:02:48.000.367,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\Pessoa.pas</Transaction>
+    <Transaction>2023/12/11 15:02:48.000.315,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\Endereco.pas</Transaction>
     <Transaction>2023/12/11 15:02:48.000.289,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\classes\Cadastro.pas</Transaction>
     <Transaction>2023/12/11 15:03:33.000.731,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\DAO\EnderecoIntegracaoDAO.pas</Transaction>
     <Transaction>2023/12/11 15:03:33.000.706,=C:\_GIT\Delphi\Desbravador\TesteGustavoEspindola\DAO\EnderecoDAO.pas</Transaction>

@@ -99,7 +99,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>cadastro.ico</Icon_MainIcon>
-        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>dcu</DCC_DcuOutput>
         <VerInfo_Build>1</VerInfo_Build>
         <VerInfo_Keys>CompanyName=Gustavo Espindola;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.1;InternalName=Gustavo Espindola;LegalCopyright=Gustavo Espindola;LegalTrademarks=Gustavo Espindola;OriginalFilename=Gustavo Espindola;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.1;Comments=</VerInfo_Keys>
         <DCC_DcpOutput>dcu</DCC_DcpOutput>
