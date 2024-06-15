@@ -34,8 +34,9 @@ inherited frmCombustivel: TfrmCombustivel
   inherited pnCadastro: TPanel
     Width = 783
     Height = 261
+    ExplicitTop = 35
     ExplicitWidth = 783
-    ExplicitHeight = 260
+    ExplicitHeight = 261
     object Label5: TLabel
       Left = 10
       Top = 63
@@ -83,7 +84,6 @@ inherited frmCombustivel: TfrmCombustivel
       CharCase = ecUpperCase
       DataField = 'NOME'
       DataSource = DataSource
-      MaxLength = 100
       TabOrder = 0
     end
   end
@@ -101,7 +101,7 @@ inherited frmCombustivel: TfrmCombustivel
     Connection = dmPrincipal.FDConexao
     SQL.Strings = (
       'SELECT * FROM COMBUSTIVEL'
-      '')
+      'ORDER BY CODIGO')
     Left = 608
     Top = 8
     object qCombustivelCODIGO: TIntegerField
@@ -120,7 +120,7 @@ inherited frmCombustivel: TfrmCombustivel
       Origin = 'PRECO_LITRO'
       Required = True
       DisplayFormat = '0.000'
-      EditFormat = '0.000'
+      EditFormat = '#,###0.000'
       Precision = 18
       Size = 3
     end

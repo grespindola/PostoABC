@@ -36,7 +36,7 @@ inherited frmTanque: TfrmTanque
     Height = 261
     ExplicitTop = 35
     ExplicitWidth = 783
-    ExplicitHeight = 260
+    ExplicitHeight = 261
     object Label5: TLabel
       Left = 10
       Top = 65
@@ -54,7 +54,7 @@ inherited frmTanque: TfrmTanque
       Left = 10
       Top = 11
       Width = 203
-      Height = 20
+      Height = 34
       Caption = 'Nome do Tanque de Combust'#237'vel'#13#10
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
@@ -101,7 +101,7 @@ inherited frmTanque: TfrmTanque
     Connection = dmPrincipal.FDConexao
     SQL.Strings = (
       'SELECT * FROM TANQUE'
-      '')
+      'ORDER BY CODIGO')
     Left = 608
     Top = 8
     object qTanqueCODIGO: TIntegerField

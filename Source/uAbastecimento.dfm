@@ -1,5 +1,5 @@
 inherited frmAbastecimento: TfrmAbastecimento
-  Caption = 'Abastecimento'
+  Caption = 'Lan'#231'amento de Abastecimentos'
   ClientHeight = 388
   ClientWidth = 783
   TransparentColorValue = clWhite
@@ -34,8 +34,9 @@ inherited frmAbastecimento: TfrmAbastecimento
   inherited pnCadastro: TPanel
     Width = 783
     Height = 261
+    ExplicitTop = 35
     ExplicitWidth = 783
-    ExplicitHeight = 260
+    ExplicitHeight = 261
     object Label2: TLabel
       Left = 10
       Top = 58
@@ -175,7 +176,7 @@ inherited frmAbastecimento: TfrmAbastecimento
       Width = 189
       Height = 25
       Date = 45457.896724861110000000
-      Format = 'dd/mm/yyyy HH:mm:ss'
+      Format = 'dd/MM/yyyy HH:mm:ss'
       Time = 45457.896724861110000000
       TabOrder = 0
       TabStop = False
@@ -345,6 +346,7 @@ inherited frmAbastecimento: TfrmAbastecimento
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
+      TabStop = False
       OnClick = btnPrecoClick
     end
   end
@@ -405,7 +407,8 @@ inherited frmAbastecimento: TfrmAbastecimento
     AfterScroll = qAbastecimentoAfterScroll
     Connection = dmPrincipal.FDConexao
     SQL.Strings = (
-      'SELECT * FROM ABASTECIMENTO')
+      'SELECT * FROM ABASTECIMENTO'
+      'ORDER BY CODIGO')
     Left = 608
     Top = 8
     object qAbastecimentoCODIGO: TIntegerField
@@ -429,7 +432,7 @@ inherited frmAbastecimento: TfrmAbastecimento
       FieldName = 'LITROS'
       Origin = 'LITROS'
       DisplayFormat = '0.000'
-      EditFormat = '0.000'
+      EditFormat = '#,###0.000'
       Precision = 18
       Size = 3
     end
@@ -437,7 +440,7 @@ inherited frmAbastecimento: TfrmAbastecimento
       FieldName = 'VALOR'
       Origin = 'VALOR'
       DisplayFormat = '0.000'
-      EditFormat = '0.000'
+      EditFormat = '#,###0.000'
       Precision = 18
       Size = 3
     end
@@ -445,7 +448,7 @@ inherited frmAbastecimento: TfrmAbastecimento
       FieldName = 'IMPOSTO'
       Origin = 'IMPOSTO'
       DisplayFormat = '0.000'
-      EditFormat = '0.000'
+      EditFormat = '#,###0.000'
       Precision = 18
       Size = 3
     end

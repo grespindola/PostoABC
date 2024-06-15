@@ -22,6 +22,7 @@ object dmPrincipal: TdmPrincipal
       'DriverID=Firebird'
       'Port=3050'
       'Server=localhost')
+    Connected = True
     LoginPrompt = False
     Transaction = FDTransacao
     Left = 52

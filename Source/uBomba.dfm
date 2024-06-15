@@ -36,7 +36,7 @@ inherited frmBomba: TfrmBomba
     Height = 261
     ExplicitTop = 35
     ExplicitWidth = 783
-    ExplicitHeight = 260
+    ExplicitHeight = 261
     object Label5: TLabel
       Left = 10
       Top = 65
@@ -101,7 +101,7 @@ inherited frmBomba: TfrmBomba
     Connection = dmPrincipal.FDConexao
     SQL.Strings = (
       'SELECT * FROM BOMBA'
-      ''
+      'ORDER BY CODIGO'
       '')
     Left = 608
     Top = 8

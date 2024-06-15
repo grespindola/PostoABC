@@ -8,7 +8,7 @@ object frmPrincipal: TfrmPrincipal
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Name = 'Arial'
   Font.Style = []
   FormStyle = fsMDIForm
   Menu = Menu
@@ -16,7 +16,7 @@ object frmPrincipal: TfrmPrincipal
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object Label1: TLabel
     Left = 0
     Top = 600
@@ -64,6 +64,7 @@ object frmPrincipal: TfrmPrincipal
       Caption = 'Relat'#243'rios'
       object AbastecimentoDirio1: TMenuItem
         Caption = 'Abastecimento Di'#225'rio'
+        OnClick = AbastecimentoDirio1Click
       end
     end
   end

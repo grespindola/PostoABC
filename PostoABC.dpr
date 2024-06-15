@@ -24,7 +24,8 @@ uses
   uPergunta in 'Source\utils\uPergunta.pas' {frmPergunta},
   uCombustivel in 'Source\uCombustivel.pas' {frmCombustivel},
   uTanque in 'Source\uTanque.pas' {frmTanque},
-  uBomba in 'Source\uBomba.pas' {frmBomba};
+  uBomba in 'Source\uBomba.pas' {frmBomba},
+  uRelAbastecimento in 'Source\Relatorios\uRelAbastecimento.pas' {RelAbastecimentos};
 
 {$R *.res}
 

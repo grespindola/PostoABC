@@ -57,7 +57,8 @@ begin
       begin
          ShowAlerta('Erro ao conectar com banco de dados.'#13#10#13#10+
                     'Verifique se a versão instalada do Firebird é a 3.0 '+
-                    'e se o serviço está rodando normalmente na porta padrão 3050. '+#13#10#13#10+
+                    'e o arquivo de configuração PostoABC.ini está configurado '+
+                    'corretamente.'+#13#10#13#10+
                     'Erro: '+ e.Message);
          Application.Terminate;
       end;
